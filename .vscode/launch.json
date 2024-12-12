@@ -8,15 +8,30 @@
 
     {
       "request": "launch",
-      "name": "Launch Program",
+      "name": "Test Program",
       "type": "node",
-      "program": "${workspaceFolder}/2015/day02/main_test.ts",
+      "program": "${workspaceFolder}/day-04/main.test.ts",
       "cwd": "${workspaceFolder}",
       "env": {},
       "runtimeExecutable": "/usr/local/bin/deno",
       "runtimeArgs": [
         "test",
-        "--unstable",
+        "--inspect-brk",
+        "--inspect-wait",
+        "--allow-all"
+      ],
+      "attachSimplePort": 9229
+    },
+    {
+      "request": "launch",
+      "name": "Run Program",
+      "type": "node",
+      "program": "${workspaceFolder}/day-04/main.ts",
+      "cwd": "${workspaceFolder}",
+      "env": {},
+      "runtimeExecutable": "/usr/local/bin/deno",
+      "runtimeArgs": [
+        "run",
         "--inspect-brk",
         "--inspect-wait",
         "--allow-all"
